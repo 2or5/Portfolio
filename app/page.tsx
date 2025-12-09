@@ -7,7 +7,9 @@ import {
   ExternalLink,
   ArrowDown,
   Send,
+  Database,
   Code2,
+  Layout,
   Palette,
   Rocket,
   ChevronRight,
@@ -55,7 +57,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-[#888] max-w-lg">
-                  A passionate <span className="text-[#f5f5f5]">Software Developer</span> crafting
+                  A passionate Software Developer crafting
                   beautiful digital experiences with modern technologies.
                 </p>
               </div>
@@ -135,7 +137,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <p className="text-[#00ff88] font-mono text-sm tracking-wider uppercase">About Me</p>
+              <p className="text-[#00ff88] font-mono text-xl tracking-widest uppercase mb-4">About Me</p>
               <h2 className="section-title">
                 Turning ideas into <span className="gradient-text">reality</span>
               </h2>
@@ -147,10 +149,10 @@ export default function Home() {
                 </p>
                 <p>
                   When I&apos;m not coding, you&apos;ll find me exploring new technologies
-                  and contributing to open-source projects.
+                  and contributing to my projects.
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-6 pt-6">
+              <div className="flex justify-center gap-12 pt-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-[#00ff88]">2+</div>
                   <div className="text-sm text-[#888]">Years Experience</div>
@@ -159,23 +161,19 @@ export default function Home() {
                   <div className="text-3xl font-bold text-[#00ff88]">10+</div>
                   <div className="text-sm text-[#888]">Projects Done</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#00ff88]">5+</div>
-                  <div className="text-sm text-[#888]">Happy Clients</div>
-                </div>
               </div>
             </div>
 
             {/* Services */}
-            <div className="space-y-4">
+            <div className="space-y-4"> 
               {[
-                { icon: Code2, title: "Web Development", description: "Building responsive web applications using modern frameworks." },
-                { icon: Palette, title: "UI/UX Design", description: "Creating intuitive and visually stunning user interfaces." },
-                { icon: Rocket, title: "Mobile Development", description: "Building cross-platform mobile apps with Kotlin and React Native." },
+                { icon: Code2, title: "Backend Development", description: "Building responsive server-side applications using modern frameworks." },
+                { icon: Database, title: "Database Management", description: "Designing efficient schemas and managing data using modern frameworks." },
+                { icon: Layout, title: "Frontend Development", description: "Creating responsive user interfaces and Page Applications leveraging a modern tech stack." },
               ].map((service, index) => (
                 <div key={index} className="bg-[#141414] border border-[#222] rounded-2xl p-6 card-hover">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-[#00ff88]/10 text-[#00ff88]">
+                  <div className="flex items-start gap-5">
+                    <div className="p-5 rounded-xl bg-[#00ff88]/10 text-[#00ff88] mt-2">
                       <service.icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -191,17 +189,17 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      {/* <section id="skills" className="py-32 px-6 bg-[#0d0d0d]">
+      <section id="skills" className="py-32 px-6 bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#00ff88] font-mono text-sm tracking-wider uppercase mb-4">My Skills</p>
+            <p className="text-[#00ff88] font-mono text-xl tracking-widest uppercase mb-4">My Skills</p>
             <h2 className="section-title">Technologies I <span className="gradient-text">work with</span></h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { category: "Frontend", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
-              { category: "Backend", skills: ["Java", "Kotlin", "Node.js", "SQL", "PostgreSQL"] },
-              { category: "Tools", skills: ["Git", "Docker", "Android Studio", "VS Code"] },
+              { category: "Frontend", skills: ["React", "JavaScript", "TypeScript", "Tailwind", "HTML/CSS", "Rest API", "Next.js", "Redux", "npm"] },
+              { category: "Backend", skills: ["Java", "Kotlin", "PostgreSQL/MySql", "Spring Boot", "MongoDB", "Hibernate/JPA/JOOQ", "Maven/Gradle"] },
+              { category: "Tools", skills: ["Git", "Docker", "Jira", "CI/CD", "Postman/Swagger", "IntelliJ IDEA", "WebStorm/VS Code/Cursor"]},
             ].map((group, index) => (
               <div key={index} className="bg-[#141414] border border-[#222] rounded-2xl p-6 card-hover">
                 <h3 className="text-lg font-semibold mb-4 text-[#00ff88]">{group.category}</h3>
@@ -214,7 +212,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Projects Section */}
       {/* <section id="projects" className="py-32 px-6">
