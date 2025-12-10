@@ -2,16 +2,11 @@
 
 import {
   Github,
-  Linkedin,
   Mail,
   ExternalLink,
-  ArrowDown,
-  Send,
   Database,
   Code2,
   Layout,
-  Palette,
-  Rocket,
   ChevronRight,
 } from "lucide-react";
 
@@ -165,7 +160,7 @@ export default function Home() {
             </div>
 
             {/* Services */}
-            <div className="space-y-4"> 
+            <div className="space-y-4">
               {[
                 { icon: Code2, title: "Backend Development", description: "Building responsive server-side applications using modern frameworks." },
                 { icon: Database, title: "Database Management", description: "Designing efficient schemas and managing data using modern frameworks." },
@@ -199,7 +194,7 @@ export default function Home() {
             {[
               { category: "Frontend", skills: ["React", "JavaScript", "TypeScript", "Tailwind", "HTML/CSS", "Rest API", "Next.js", "Redux", "npm"] },
               { category: "Backend", skills: ["Java", "Kotlin", "PostgreSQL/MySql", "Spring Boot", "MongoDB", "Hibernate/JPA/JOOQ", "Maven/Gradle"] },
-              { category: "Tools", skills: ["Git", "Docker", "Jira", "CI/CD", "Postman/Swagger", "IntelliJ IDEA", "WebStorm/VS Code/Cursor"]},
+              { category: "Tools", skills: ["Git", "Docker", "Jira", "CI/CD", "Postman/Swagger", "IntelliJ IDEA", "WebStorm/VS Code/Cursor"] },
             ].map((group, index) => (
               <div key={index} className="bg-[#141414] border border-[#222] rounded-2xl p-6 card-hover">
                 <h3 className="text-lg font-semibold mb-4 text-[#00ff88]">{group.category}</h3>
@@ -215,18 +210,30 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      {/* <section id="projects" className="py-32 px-6">
+      <section id="projects" className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#00ff88] font-mono text-sm tracking-wider uppercase mb-4">My Work</p>
+            <p className="text-[#00ff88] font-mono text-xl tracking-widest uppercase mb-4">My Work</p>
             <h2 className="section-title">Featured <span className="gradient-text">Projects</span></h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { title: "Project 1", description: "Description of your first project goes here.", tags: ["React", "Node.js"], link: "#", github: "#" },
-              { title: "Project 2", description: "Description of your second project goes here.", tags: ["Kotlin", "Android"], link: "#", github: "#" },
-              { title: "Project 3", description: "Description of your third project goes here.", tags: ["Next.js", "PostgreSQL"], link: "#", github: "#" },
-              { title: "Project 4", description: "Description of your fourth project goes here.", tags: ["Java", "Spring"], link: "#", github: "#" },
+              {
+                title: "GreenCity", description: "Open-source project focused on developing digital solutions for urban environments. The main aim of “GreenCity” project is to teach people in a playful and challenging way to have an eco-friendly lifestyle.",
+                tags: ["Java", "Spring Boot", "PostgreSQL", "Maven", "Microservices", "Rest API"], link: "https://www.pick-up.city/#/ubs", github: "https://github.com/ita-social-projects/GreenCity"
+              },
+              {
+                title: "Speech to text", description: "This project was created so that the user can create notes with the help of voice. The user can record his voice, send it to the back, end and receive his recorded voice as text. If necessary, the user can edit and delete notes.",
+                tags: ["Java", "Spring Boot", "Gradle", "Spring Security", "React", "JS/TS"], github: "https://github.com/2or5/speech-to-text-client"
+              },
+              {
+                title: "Resolution", description: "An educational platform offering a variety of training programs and courses, including online learning with flexible schedules and teacher selection.",
+                tags: ["Kotlin", "PostgreSQL", "MongoDB", "JOOQ", "CI/CD", "AWS", "Liquibase"], link: "https://resolution.school/", github: "#"
+              },
+              {
+                title: "Athenahealth Patient Engagement Portal", description: "Athenahealth is a digital platform for interaction between patients and healthcare providers. The system allows patients to schedule appointments, receive reminders, view visit history, and access lab results.",
+                tags: ["Java", "Flyway", "MySql", "Hibernate", "Docker", "Gradle", "Rest API"], link: "https://www.athenahealth.com/solutions/patient-engagement", github: "#"
+              },
             ].map((project, index) => (
               <div key={index} className="group bg-[#141414] border border-[#222] rounded-2xl overflow-hidden card-hover">
                 <div className="h-48 bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0a] flex items-center justify-center">
@@ -243,59 +250,61 @@ export default function Home() {
                     ))}
                   </div>
                   <div className="flex items-center gap-4 pt-2">
-                    <a href={project.link} className="flex items-center gap-2 text-sm text-[#888] hover:text-[#00ff88]">
-                      <ExternalLink className="w-4 h-4" /> Live Demo
-                    </a>
-                    <a href={project.github} className="flex items-center gap-2 text-sm text-[#888] hover:text-[#00ff88]">
-                      <Github className="w-4 h-4" /> Source
-                    </a>
+                    {(project.title === "GreenCity") && (
+                      <>
+                        <a href={project.link} className="flex items-center gap-2 text-sm text-[#888] hover:text-[#00ff88]">
+                          <ExternalLink className="w-4 h-4" /> Live Demo
+                        </a>
+                        <a href={project.github} className="flex items-center gap-2 text-sm text-[#888] hover:text-[#00ff88]">
+                          <Github className="w-4 h-4" /> Source
+                        </a>
+                      </>
+                    )}
+                    {(project.title === "Speech to text") && (
+                      <a href={project.github} className="flex items-center gap-2 text-sm text-[#888] hover:text-[#00ff88]">
+                        <Github className="w-4 h-4" /> Source
+                      </a>
+                    )}
+                    {(project.title === "Resolution" || project.title === "Athenahealth Patient Engagement Portal") && (
+                      <a href={project.link} className="flex items-center gap-2 text-sm text-[#888] hover:text-[#00ff88]">
+                        <ExternalLink className="w-4 h-4" /> Live Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Contact Section */}
-      {/* <section id="contact" className="py-32 px-6 bg-[#0d0d0d]">
+      <section id="contact" className="py-32 px-6 bg-[#0d0d0d]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#00ff88] font-mono text-sm tracking-wider uppercase mb-4">Get In Touch</p>
+            <p className="text-[#00ff88] font-mono text-xl tracking-widest uppercase mb-4">Get In Touch</p>
             <h2 className="section-title">Let&apos;s work <span className="gradient-text">together</span></h2>
             <p className="text-[#888] text-lg max-w-2xl mx-auto mt-4">
-              Have a project in mind? Feel free to reach out!
+              Do you have an interesting idea or want to collaborate? I’m always open to new opportunities, exciting projects, or simply a good conversation. Please feel free to send me a message — let’s see what we can build together!
             </p>
           </div>
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid md:grid-cols-2 gap-6">
-              <input type="text" placeholder="Your name" className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#222] focus:border-[#00ff88] focus:outline-none" />
-              <input type="email" placeholder="your@email.com" className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#222] focus:border-[#00ff88] focus:outline-none" />
-            </div>
-            <input type="text" placeholder="Subject" className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#222] focus:border-[#00ff88] focus:outline-none" />
-            <textarea rows={6} placeholder="Your message..." className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-[#222] focus:border-[#00ff88] focus:outline-none resize-none" />
-            <button type="submit" className="btn-primary w-full justify-center">
-              Send Message <Send className="w-4 h-4" />
-            </button>
-          </form>
           <div className="mt-12 text-center">
-            <p className="text-[#888] mb-4">Or reach out directly</p>
             <div className="flex items-center justify-center gap-6">
-              <a href="mailto:nazarbokalo0@gmail.com" className="text-[#888] hover:text-[#00ff88]">nazarbokalo0@gmail.com</a>
+              <span className="text-[#888] font-mono text-base">nazarbokalo0@gmail.com</span>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Footer */}
-      {/* <footer className="py-8 px-6 border-t border-[#222]">
+      <footer className="py-8 px-6 border-t border-[#222]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#888] text-sm">© {new Date().getFullYear()} Nazar Bokalo. All rights reserved.</p>
-          <p className="text-[#888] text-sm font-mono">
+          <p className="text-[#888] text-sm text-center w-full">© {new Date().getFullYear()} Nazar Bokalo. All rights reserved.</p>
+          {/* <p className="text-[#888] text-sm font-mono text-center w-full">
             Built with <span className="text-[#00ff88]">Next.js</span> & <span className="text-[#00ff88]">Tailwind CSS</span>
-          </p>
+          </p> */}
         </div>
-      </footer> */}
+      </footer>
     </div>
   );
 }
