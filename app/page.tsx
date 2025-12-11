@@ -149,7 +149,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center gap-12 pt-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#00ff88]">2+</div>
+                  <div className="text-3xl font-bold text-[#00ff88]">4+</div>
                   <div className="text-sm text-[#888]">Years Experience</div>
                 </div>
                 <div className="text-center">
