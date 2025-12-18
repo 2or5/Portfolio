@@ -68,7 +68,7 @@ export default function Home() {
                 <a href="https://github.com/2or5" target="_blank" rel="noopener noreferrer" className="text-[#888] hover:text-[#00ff88] transition-colors">
                   <Github className="w-6 h-6" />
                 </a>
-                <a href="mailto:nazarbokalo0@gmail.com" className="text-[#888] hover:text-[#00ff88] transition-colors">
+                <a href="mailto:nazar.bokalo.work@gmail.com" className="text-[#888] hover:text-[#00ff88] transition-colors">
                   <Mail className="w-6 h-6" />
                 </a>
               </div>
