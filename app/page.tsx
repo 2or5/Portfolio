@@ -290,7 +290,7 @@ export default function Home() {
           </div>
           <div className="mt-12 text-center">
             <div className="flex items-center justify-center gap-6">
-              <span className="text-[#888] font-mono text-base">nazarbokalo0@gmail.com</span>
+              <span className="text-[#888] font-mono text-base">nazar.bokalo.work@gmail.com</span>
             </div>
           </div>
         </div>
